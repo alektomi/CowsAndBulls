@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="cab.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <!--sozdaem box kotorye vyravneny gorizontalno-->
+        <HBox>
+            <Spinner fx:id="num1" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num2" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num3" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Spinner fx:id="num4" initialValue="5" max="9" min="0" prefWidth="70"/>
+            <Button text="Go" onAction="#go"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="turns">
+            <columns>
+                <TableColumn text="turn #">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="turnNr"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="guess"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Cows"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
